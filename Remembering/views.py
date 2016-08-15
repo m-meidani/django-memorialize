@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.http import HttpResponseRedirect
 
@@ -38,7 +39,7 @@ class WriteMemory(View):
 
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            if self.type is 'image':
+            if self.type == 'image':
                 new_message = Message(person=self.person, image=form.cleaned_data['image'])
             else:
                 new_message = Message(person=self.person, text_message=form.cleaned_data['text'])
@@ -47,7 +48,7 @@ class WriteMemory(View):
             self.person.save()
             return HttpResponseRedirect(reverse_lazy('thanks'))
 
-        return HttpResponseRedirect(reverse_lazy('thanks'))
+        return HttpResponse("یک مشکلی وجود داره. احتمالا فرمت عکسی که فرستادی درست نیست. دوباره امتحان کن لطفا :)")
 
 
 def not_found(request):

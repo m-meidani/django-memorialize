@@ -9,7 +9,11 @@
     font-size: 1.1em;
 }
 
-.center > p > span {
+#smile {
     margin-right: 190px;
     font-size: 3em;
+}
+
+#reminder {
+    font-size: 0.6em;
 }

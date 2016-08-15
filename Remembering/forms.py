@@ -7,7 +7,10 @@ class ImageUploadForm(forms.Form):
     text = forms.CharField(widget=forms.Textarea, required=False)
 
     def clean(self):
-        check = [self.cleaned_data['image'], self.cleaned_data['text']]
+        if 'image' in self.cleaned_data and 'text' in self.cleaned_data:
+            check = [self.cleaned_data['image'], self.cleaned_data['text']]
+        else:
+            raise ValidationError('Incorrect file format')
         if any(check) and not all(check):
             return self.cleaned_data
         raise ValidationError('Select either image or text')

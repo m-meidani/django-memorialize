@@ -1,0 +1,25 @@
+@font-face {
+	font-family: 'Yekan';
+	src: url('../font/BYekan.eot');
+	src: local('☺'),
+	url('../font/BYekan.woff') format('woff'),
+	url('../font/BYekan.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'IranianSans';
+	src: url('../font/IranianSans.eot');
+	src: local('☺'),
+	local('Iranian Sans'),
+	url('../font/IranianSans.woff') format('woff'),
+	url('../font/IranianSans.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+p, h1, h2{
+    font-family: Yekan;
+}

@@ -1,0 +1,101 @@
+header {
+    background-color: #fffeec;
+    height: 300px;
+}
+
+.center {
+    position: relative;
+    top: 40%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.intro {
+    transform: translateY(-50%);
+}
+
+body{
+    direction: rtl;
+}
+
+body, html {
+    height: 100%;
+    background-color: #e8534f;
+
+}
+
+.content {
+    margin-top: 40px;
+}
+
+.imgtext {
+    display: inline-block;
+    position: absolute;
+    width: 90%;
+    margin-right: 70px;
+    color: #7d7d7d;
+    text-align: justify;
+    line-height: 2;
+}
+
+.imgtext > h2 {
+    margin-top: 0px;
+}
+
+form{
+    height: 200px;
+}
+
+.content > .center {
+    top: 10%;
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.nav-tabs>li>a {
+    color: white;
+}
+
+.file {
+  position: relative;
+}
+.file label {
+  background: #39D2B4;
+  padding: 5px 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: .9em;
+  transition: all .4s;
+}
+.file input {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  opacity: 0.01;
+  cursor: pointer;
+}
+.file input:hover + label,
+.file input:focus + label {
+  background: #34495E;
+  color: #39D2B4;
+}
+
+
+.text-form > button {
+    background: transparent !important;
+    margin-top: 10px;
+    color: white;
+    font-style: normal;
+    font-size: 15px;
+    text-shadow: none;
+}
+
+
+.icon {
+    font-size: 80px;
+    color: grey;
+}

@@ -1,0 +1,15 @@
+.center {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+}
+
+.center > p > span {
+    margin-right: 190px;
+    font-size: 3em;
+}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>اضافه کردن یک دوست</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="{% static 'css/normalize.css' %}" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
+    <link type="text/css" href="{% static 'css/anony.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    <link type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
+
+</head>
+<body>
+<div class="container">
+
+      <form class="form-new-user" method="post"> {% csrf_token %}
+        <h2 class="form-new-user-heading">لطفا مشخصات زیر را وارد کنید</h2>
+        <label for="inputName" class="sr-only">اسم کوچیک</label>
+        <input type="text" id="inputName" class="form-control" placeholder="اسم کوچیک" required autofocus name="name">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="ایمیل" name="email">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">ورود به صفحه نوشتن تبریک</button>
+      </form>
+
+    </div> <!-- /container -->
+</body>
+</html>

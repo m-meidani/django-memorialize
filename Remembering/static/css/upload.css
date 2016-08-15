@@ -11,6 +11,13 @@ header {
     margin-right: auto;
 }
 
+@media screen and (max-width: 640px) {
+    .center {
+        width: 100%;
+    }
+}
+
+
 div.intro {
     transform: translateY(-50%);
 }
@@ -37,6 +44,12 @@ body, html {
     color: #7d7d7d;
     text-align: justify;
     line-height: 2;
+}
+
+@media screen and (max-width: 640px) {
+    .imgtext {
+        width: auto;
+    }
 }
 
 .imgtext > h2 {
@@ -98,4 +111,8 @@ form{
 .icon {
     font-size: 80px;
     color: grey;
+}
+
+.nav-tabs > li > a {
+    font-size:1.3em;
 }

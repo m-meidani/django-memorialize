@@ -2,7 +2,7 @@
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.http import HttpResponseRedirect
 
-from .forms import ImageUploadForm
+from .forms import ImageUploadForm, NewUserForm
 from .models import Person, Message
 from .gravatar import get_avatar
 
@@ -44,8 +44,9 @@ class WriteMemory(View):
             else:
                 new_message = Message(person=self.person, text_message=form.cleaned_data['text'])
             new_message.save()
-            self.person.is_url_valid = False
-            self.person.save()
+            # These two lines should be commented out to limit number of comments to 1
+            # self.person.is_url_valid = False
+            # self.person.save()
             return HttpResponseRedirect(reverse_lazy('thanks'))
 
         return HttpResponse("یک مشکلی وجود داره. احتمالا فرمت عکسی که فرستادی درست نیست. دوباره امتحان کن لطفا :)")
@@ -61,3 +62,16 @@ def not_found(request):
 
 def thanks(request):
     return render_to_response('Thanks.html')
+
+
+class NewUserView(View):
+
+    def get(self, request):
+        return render(request, 'anony.html')
+
+    def post(self, request):
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            instance = form.save()
+            return HttpResponseRedirect(reverse_lazy('write-memory', kwargs={'uuid': instance.url}))
+        return HttpResponse('ایمیل آدرس را درست وارد کنید یا وارد نکنید.')

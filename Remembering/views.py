@@ -10,6 +10,7 @@ from django.views.generic import View
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.urls import reverse_lazy
 
+from random import shuffle
 
 # Create your views here.
 
@@ -81,4 +82,6 @@ class IndexView(View):
 
     def get(self, request):
         messages = Message.objects.all()
-        return render(request, 'index.html', context={'messages': messages})
+        result = list(messages)
+        shuffle(result)
+        return render(request, 'index.html', context={'messages': result})

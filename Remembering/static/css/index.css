@@ -47,4 +47,14 @@ body { font-family: sans-serif; }
 .panel-text {
     padding-top: 10px;
     padding-right: 10px;
+
+}
+
+.panel-footer{
+    border-top: none;
+    background-color: white;
+}
+
+.panel {
+    border-radius: 0px;
 }

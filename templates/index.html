@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>تولدت مبارک</title>
+    <link href="{% static 'css/normalize.css' %}" type="text/css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
+    <link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body dir="rtl">
+<div class="container-fluid">
+<div class="page-header">
+  <h1>سایتی برای تبریک تولد<small></small></h1>
+</div>
+    <div class="grid">
+        <div class="grid-sizer"></div>
+        {% for message in messages %}
+            <div class="grid-item {% if message.image.width > 2000 %} grid-item--width2{% endif %}">
+                {% if message.image %}
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img src="{{ message.image.url }}">
+                        </div>
+                        <div class="panel-footer">{{ message.person.name }}</div>
+                    </div>
+                {% else %}
+                    <div class="panel panel-default">
+                        <div class="panel-body panel-text">
+                            <p>{{ message.text_message }}</p>
+                        </div>
+                        <div class="panel-footer">
+                            {{ message.person.name }}
+                        </div>
+                    </div>
+
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+<blockquote>
+  <p>با وجود اینکه خبردار شدی، امیدوارم خوش‌حالت کرده باشه، تولدت مبارک</p>
+  <footer>از طرف دوستت، مهران</footer>
+</blockquote>
+</div>
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

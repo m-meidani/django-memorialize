@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url, include, handler404
 from django.contrib import admin
+from django.conf import settings
+from django.views.static import serve
 
 handler404 = 'Remembering.views.not_found'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('Remembering.urls'))
 ]
+
+if settings.DEBUG:
+    urlpatterns.append(
+        url(r'^media/(?P<path>.*)$', serve,
+            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}))

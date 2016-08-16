@@ -75,3 +75,10 @@ class NewUserView(View):
             instance = form.save()
             return HttpResponseRedirect(reverse_lazy('write-memory', kwargs={'uuid': instance.url}))
         return HttpResponse('ایمیل آدرس را درست وارد کنید یا وارد نکنید.')
+
+
+class IndexView(View):
+
+    def get(self, request):
+        messages = Message.objects.all()
+        return render(request, 'index.html', context={'messages': messages})

@@ -1,6 +1,6 @@
 header {
     background-color: #fffeec;
-    height: 300px;
+    min-height: 200px;
 }
 
 .center {

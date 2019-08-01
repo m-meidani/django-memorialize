@@ -20,6 +20,6 @@
 }
 
 
-p, h1, h2{
-    font-family: Yekan;
+p, h1, h2, h3, label, button, body{
+    font-family: Yekan !important;
 }

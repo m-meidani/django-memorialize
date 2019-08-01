@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>اضافه کردن یک دوست</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link type="text/css" href="{% static 'css/normalize.css' %}" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -22,13 +22,22 @@
 <body>
 <div class="container">
 
-      <form class="form-new-user" method="post"> {% csrf_token %}
-        <h2 class="form-new-user-heading">لطفا مشخصات زیر را وارد کنید</h2>
-        <label for="inputName" class="sr-only">اسم کوچیک</label>
-        <input type="text" id="inputName" class="form-control" placeholder="اسم کوچیک" required autofocus name="name">
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="ایمیل" name="email">
+  <form class="form-new-user" method="post"> {% csrf_token %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">لطفا مشخصات زیر را وارد کنید</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="inputName">اسم (اجباری)</label>
+          <input type="text" id="inputName" class="form-control" placeholder="اسم" required autofocus name="name">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">آدرس ایمیل (اختیاری)</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="ایمیل" name="email">
+        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">ورود به صفحه نوشتن تبریک</button>
+      </div>
       </form>
 
     </div> <!-- /container -->

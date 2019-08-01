@@ -15,28 +15,30 @@
     <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
     <link type="text/css" href="{% static 'css/upload.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
-    <link type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
-
+    <link type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
 <header>
-    <div class="center intro">
-        <div class="profileimg" style="display: inline-block;">
+<div class="container">
+  <div class="row">
+        <div class="col-sm-2 col-md-1 col-md-offset-2 hidden-xs">
             <i class="ion-paper-airplane icon"></i>
         </div>
-        <div class="imgtext">
+        <div class="col-sm-10 col-md-7 col-xs-12">
             <h2>سلام {{ name }}،</h2>
-            <p>تو این صفحه می‌تونی یک تبریک تولد یا خاطره برای فائزه بنویسی. خیلی بهتر می‌شه اگه با دست خط خودت اون و
-                بنویسی، ازش عکس بگیری و عکسش و بفرستی ولی اگه سختت بود، می‌تونی یک متن تایپ شده هم بفرستی. چهارشنبه
-                قراره همه اینارو توی همین وب‌سایت خودش ببینه :)</p>
+            <p style="text-align: justify;">تو این صفحه می‌تونی یک تبریک تولد یا خاطره برای الهه بنویسی. یا اگر عکس یادگری داری، براش آپلود کنی. همچنین می‌تونی یک دست‌نوشته یا نقاشی هم براش بفرستی و خیلی خوشحالش کنی. دوشنبه، در روز تولدش،
+                قراره همه اینارو توی صفحه‌ای اصلی همین وب‌سایت خودش ببینه :)</p>
+            <p style="text-align: justify">در پایین انتخاب کن که عکس آپلود می‌کنی یا می‌نویسی. همچنین می‌تونی دوباره برگردی و چندین بار این کارو بکنی. یادت باشه که تا روز تولدش خودش خبر نخواهد داشت.</p>
         </div>
+      </div>
     </div>
 </header>
 
 <div class="container-fluid content">
     <div class="center">
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">آپلود دست‌نوشته</a></li>
+            <li class="active"><a data-toggle="tab" href="#home">آپلود عکس</a></li>
             <li><a data-toggle="tab" href="#menu1">نوشتن متن</a></li>
         </ul>
 
@@ -49,7 +51,7 @@
                     </p>
                     <p class="file">
                         <input type="file" name="image" id="file" onchange="this.form.submit()"/>
-                        <label for="file">عکس خود را آپلود کنید</label>
+                        <label for="file">عکس را آپلود کنید</label>
                     </p>
                 </form>
             </div>

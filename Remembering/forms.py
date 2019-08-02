@@ -4,12 +4,13 @@ from django.core.exceptions import ValidationError
 from .models import Person
 
 class ImageUploadForm(forms.Form):
+    video = forms.FileField(required=False)
     image = forms.ImageField(required=False)
     text = forms.CharField(widget=forms.Textarea, required=False)
 
     def clean(self):
-        if 'image' in self.cleaned_data and 'text' in self.cleaned_data:
-            check = [self.cleaned_data['image'], self.cleaned_data['text']]
+        if 'image' in self.cleaned_data and 'text' in self.cleaned_data and 'video' in self.cleaned_data:
+            check = [self.cleaned_data['image'], self.cleaned_data['text'], self.cleaned_data['video']]
         else:
             raise ValidationError('Incorrect file format')
         if any(check) and not all(check):

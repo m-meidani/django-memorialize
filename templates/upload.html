@@ -38,8 +38,9 @@
 <div class="container-fluid content">
     <div class="center">
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">آپلود عکس</a></li>
-            <li><a data-toggle="tab" href="#menu1">نوشتن متن</a></li>
+          <li class="active"><a data-toggle="tab" href="#home">آپلود عکس</a></li>
+          <li><a data-toggle="tab" href="#video">آپلود ویدیو</a></li>
+          <li><a data-toggle="tab" href="#menu1">نوشتن متن</a></li>
         </ul>
 
         <div class="tab-content">
@@ -52,6 +53,18 @@
                     <p class="file">
                         <input type="file" name="image" id="file" onchange="this.form.submit()"/>
                         <label for="file">عکس را آپلود کنید</label>
+                    </p>
+                </form>
+              </div>
+
+              <div id="video" class="tab-pane fade">
+                <form action="video/" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <p>
+                        لطفا فایل کم حجم آپلود کنید.
+                    </p>
+                    <p class="file">
+                        <input type="file" name="video" id="video_upload" onchange="console.log(this.form); this.form.submit();"/>
+                        <label for="video_upload">آپلود فیلم</label>
                     </p>
                 </form>
             </div>

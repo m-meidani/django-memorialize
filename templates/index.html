@@ -32,8 +32,18 @@
                             <img src="{{ message.image.url }}">
                         </div>
                         <div class="panel-footer">{{ message.person.name }}</div>
-                    </div>
-                {% else %}
+                      </div>
+                {% elif message.video %}
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <video width='400' controls>
+                          <source src='{{ message.video.url }}' type='video/mp4'>
+                          Your browser does not support the video tag.
+                        </video>
+                        </div>
+                        <div class="panel-footer">{{ message.person.name }}</div>
+                      </div>
+                {% elif message.text_message %}
                     <div class="panel panel-default">
                         <div class="panel-body panel-text">
                             <p>{{ message.text_message }}</p>

@@ -35,15 +35,17 @@ class WriteMemory(View):
                                                'name': self.person.name})
 
     def post(self, request):
-        if self.type is None or self.type not in ['image', 'text']:
+        if self.type is None or self.type not in ['image', 'text', 'video']:
             return HttpResponseBadRequest()
-
+        print(self.type)
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
             if self.type == 'image':
                 new_message = Message(person=self.person, image=form.cleaned_data['image'])
-            else:
+            elif self.type == 'text':
                 new_message = Message(person=self.person, text_message=form.cleaned_data['text'])
+            elif self.type == 'video':
+                new_message = Message(person=self.person, video=form.cleaned_data['video'])
             new_message.save()
             # These two lines should be commented out to limit number of comments to 1
             # self.person.is_url_valid = False

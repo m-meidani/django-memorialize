@@ -29,6 +29,7 @@ class Message(models.Model):
     person = models.ForeignKey(Person)
     text_message = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to=get_file_path, blank=True, null=True)
+    video = models.FileField(upload_to=get_file_path, blank=True, null=True)
 
     def __unicode__(self):
         return "A greeting message from '%s' which is '%s'" % (self.person.name,
